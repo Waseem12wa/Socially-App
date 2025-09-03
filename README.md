@@ -2,8 +2,6 @@
 
 Socially is a full-featured social networking application focused on delightful UX, smooth animations, and real-time interactions. Core features include user profiles, photo sharing, social feeds with likes and comments, ephemeral stories, direct messaging, follower management, and real-time notifications.
 
-![Socially Cover](./docs/cover.png)
-
 ---
 
 ## ✨ Features

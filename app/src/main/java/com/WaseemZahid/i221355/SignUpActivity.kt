@@ -15,13 +15,17 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
         
         // Handle system bars for edge-to-edge display
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        try {
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
+        } catch (e: Exception) {
+            // Handle error silently
         }
         
-        // Initialize views
+        // Initialize views with null safety
         val backButton = findViewById<android.widget.ImageView>(R.id.backButton)
         val createAccountButton = findViewById<CardView>(R.id.createAccountButton)
         val profilePictureCard = findViewById<CardView>(R.id.profilePictureCard)
@@ -35,31 +39,35 @@ class SignUpActivity : AppCompatActivity() {
         val passwordField = findViewById<android.widget.EditText>(R.id.passwordField)
         
         // Back button click listener
-        backButton.setOnClickListener {
+        backButton?.setOnClickListener {
             finish() // Go back to previous activity
         }
         
         // Create account button click listener
-        createAccountButton.setOnClickListener {
-            // Get form data
-            val username = usernameField.text.toString()
-            val name = nameField.text.toString()
-            val lastname = lastnameField.text.toString()
-            val dob = dobField.text.toString()
-            val email = emailField.text.toString()
-            val password = passwordField.text.toString()
-            
-            // Basic validation
-            if (username.isEmpty() || name.isEmpty() || lastname.isEmpty() || dob.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            } else {
-                // Handle account creation
-                Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
+        createAccountButton?.setOnClickListener {
+            try {
+                // Get form data
+                val username = usernameField?.text?.toString() ?: ""
+                val name = nameField?.text?.toString() ?: ""
+                val lastname = lastnameField?.text?.toString() ?: ""
+                val dob = dobField?.text?.toString() ?: ""
+                val email = emailField?.text?.toString() ?: ""
+                val password = passwordField?.text?.toString() ?: ""
+                
+                // Basic validation
+                if (username.isEmpty() || name.isEmpty() || lastname.isEmpty() || dob.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                } else {
+                    // Handle account creation
+                    Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this, "Error processing form: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
         
         // Profile picture click listener
-        profilePictureCard.setOnClickListener {
+        profilePictureCard?.setOnClickListener {
             // Handle profile picture selection
             Toast.makeText(this, "Profile picture selection would be implemented here", Toast.LENGTH_SHORT).show()
         }

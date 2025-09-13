@@ -18,7 +18,7 @@
             android:id="@+id/backButton"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@drawable/chevron_left"
             android:tint="@color/black"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"

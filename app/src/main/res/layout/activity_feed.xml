@@ -503,7 +503,8 @@
             android:id="@+id/notificationsIcon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/notifications_on"
+            android:src="@drawable/like"
+            android:tint="@color/brown_primary"
             android:layout_marginEnd="32dp" />
 
         <!-- Messages Icon -->

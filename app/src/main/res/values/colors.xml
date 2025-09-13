@@ -8,6 +8,7 @@
     <color name="red_brown">#5C0000</color>
     <color name="red_brown_light">#7A0000</color>
     <color name="grey_light">#CCCCCC</color>
+    <color name="grey_text_light">#999999</color>
     <color name="blue">#2196F3</color>
     <color name="red">#FF0000</color>
 </resources>

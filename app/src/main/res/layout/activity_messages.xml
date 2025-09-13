@@ -24,7 +24,7 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_revert"
+            android:src="@drawable/chevron_left"
             android:layout_marginEnd="16dp" />
 
         <!-- Username with Dropdown -->
@@ -33,13 +33,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="jacob_w"
-                android:textColor="@color/black"
+                android:textColor="@color/red"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif" />
@@ -51,6 +51,15 @@
                 android:layout_marginStart="4dp" />
 
         </LinearLayout>
+
+        <!-- Message Icon -->
+        <ImageView
+            android:id="@+id/messageIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/comment"
+            android:tint="@color/brown_primary"
+            android:layout_marginEnd="16dp" />
 
         <!-- Plus Icon -->
         <ImageView
@@ -114,6 +123,7 @@
 
             <!-- Message 1 - joshua_l -->
             <LinearLayout
+                android:id="@+id/message1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -192,6 +202,7 @@
 
             <!-- Message 2 - karennne -->
             <LinearLayout
+                android:id="@+id/message2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -270,6 +281,7 @@
 
             <!-- Message 3 - martini_rond -->
             <LinearLayout
+                android:id="@+id/message3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -348,6 +360,7 @@
 
             <!-- Message 4 - andrewww_ -->
             <LinearLayout
+                android:id="@+id/message4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -426,6 +439,7 @@
 
             <!-- Message 5 - kiero_d -->
             <LinearLayout
+                android:id="@+id/message5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -504,6 +518,7 @@
 
             <!-- Message 6 - maxjacobson -->
             <LinearLayout
+                android:id="@+id/message6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -613,5 +628,6 @@
             android:fontFamily="sans-serif" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

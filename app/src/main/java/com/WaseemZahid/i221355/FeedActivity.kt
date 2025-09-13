@@ -16,13 +16,17 @@ class FeedActivity : AppCompatActivity() {
         setContentView(R.layout.activity_feed)
         
         // Handle system bars for edge-to-edge display
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        try {
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
+        } catch (e: Exception) {
+            // Handle error silently
         }
         
-        // Initialize views
+        // Initialize views with null safety
         val cameraIcon = findViewById<android.widget.ImageView>(R.id.cameraIcon)
         val tvIcon = findViewById<android.widget.ImageView>(R.id.tvIcon)
         val filterIcon = findViewById<android.widget.ImageView>(R.id.filterIcon)
@@ -38,63 +42,82 @@ class FeedActivity : AppCompatActivity() {
         val messagesIcon = findViewById<android.widget.ImageView>(R.id.messagesIcon)
         
         // Header icons click listeners
-        cameraIcon.setOnClickListener {
-            Toast.makeText(this, "Camera functionality would be implemented here", Toast.LENGTH_SHORT).show()
+        cameraIcon?.setOnClickListener {
+            try {
+                // Navigate to MessagesActivity
+                val intent = Intent(this, MessagesActivity::class.java)
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Error navigating to messages: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
         
-        tvIcon.setOnClickListener {
+        tvIcon?.setOnClickListener {
             Toast.makeText(this, "TV/Reels functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
-        filterIcon.setOnClickListener {
+        filterIcon?.setOnClickListener {
             Toast.makeText(this, "Filter functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
         // Post menu click listener
-        menuDots.setOnClickListener {
+        menuDots?.setOnClickListener {
             Toast.makeText(this, "Post menu functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
         // Engagement icons click listeners
-        likeIcon.setOnClickListener {
+        likeIcon?.setOnClickListener {
             Toast.makeText(this, "Like functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
-        commentIcon.setOnClickListener {
+        commentIcon?.setOnClickListener {
             Toast.makeText(this, "Comment functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
-        shareIcon.setOnClickListener {
+        shareIcon?.setOnClickListener {
             Toast.makeText(this, "Share functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
-        saveIcon.setOnClickListener {
+        saveIcon?.setOnClickListener {
             Toast.makeText(this, "Save functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
         // Bottom navigation click listeners
-        homeIcon.setOnClickListener {
+        homeIcon?.setOnClickListener {
             Toast.makeText(this, "Already on Home", Toast.LENGTH_SHORT).show()
         }
         
-        searchIcon.setOnClickListener {
-            // Navigate to SearchActivity
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
+        searchIcon?.setOnClickListener {
+            try {
+                // Navigate to SearchActivity
+                val intent = Intent(this, SearchActivity::class.java)
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Error navigating to search: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
         
-        addPostIcon.setOnClickListener {
+        addPostIcon?.setOnClickListener {
             Toast.makeText(this, "Add Post functionality would be implemented here", Toast.LENGTH_SHORT).show()
         }
         
-        notificationsIcon.setOnClickListener {
-            Toast.makeText(this, "Notifications functionality would be implemented here", Toast.LENGTH_SHORT).show()
+        notificationsIcon?.setOnClickListener {
+            try {
+                val intent = Intent(this, NotificationsActivity::class.java)
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Error navigating to notifications: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
         
-        messagesIcon.setOnClickListener {
-            // Navigate to MessagesActivity
-            val intent = Intent(this, MessagesActivity::class.java)
-            startActivity(intent)
+        messagesIcon?.setOnClickListener {
+            try {
+                // Navigate to MessagesActivity
+                val intent = Intent(this, MessagesActivity::class.java)
+                startActivity(intent)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Error navigating to messages: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

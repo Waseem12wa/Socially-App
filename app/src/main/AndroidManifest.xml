@@ -41,6 +41,15 @@
                 <activity
                     android:name=".MessagesActivity"
                     android:exported="false" />
+                <activity
+                    android:name=".ChatActivity"
+                    android:exported="false" />
+                <activity
+                    android:name=".VoiceCallActivity"
+                    android:exported="false" />
+                <activity
+                    android:name=".NotificationsActivity"
+                    android:exported="false" />
             </application>
 
 </manifest>

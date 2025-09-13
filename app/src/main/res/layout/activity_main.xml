@@ -5,15 +5,64 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <!-- Socially logo image - CENTERED in middle of screen -->
+    <ImageView
+        android:id="@+id/sociallyLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/socially_logo"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- From and SMD text - VERY BOTTOM of screen -->
+    <LinearLayout
+        android:id="@+id/bottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/homeIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- From text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="from"
+            android:textColor="@color/brown_secondary"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif" />
+
+        <!-- SMD text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMD"
+            android:textColor="@color/brown_primary"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+    <!-- Home indicator line at bottom -->
+    <View
+        android:id="@+id/homeIndicator"
+        android:layout_width="134dp"
+        android:layout_height="4dp"
+        android:background="@color/brown_primary"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

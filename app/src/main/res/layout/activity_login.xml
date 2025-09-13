@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Socially Logo - Large Size Only -->
+        <ImageView
+            android:id="@+id/sociallyLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/socially_logo"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="120dp" />
+
+        <!-- Profile Picture -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profilePictureCard"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="60dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sociallyLogo">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/story_2"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/usernameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jacob_w"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profilePictureCard" />
+
+        <!-- Log in Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/loginButton"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/brown_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/usernameText">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log in"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Switch accounts Link -->
+        <TextView
+            android:id="@+id/switchAccountsLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch accounts"
+            android:textColor="@color/brown_primary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+        <!-- Sign up Section -->
+        <LinearLayout
+            android:id="@+id/signupSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/switchAccountsLink">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/signupLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign up."
+                android:textColor="@color/brown_primary"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif" />
+
+        </LinearLayout>
+
+        <!-- Home Indicator Line -->
+        <View
+            android:id="@+id/homeIndicator"
+            android:layout_width="134dp"
+            android:layout_height="4dp"
+            android:background="@color/brown_primary"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signupSection" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

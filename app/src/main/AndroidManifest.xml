@@ -20,6 +20,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginFormActivity"
+            android:exported="false" />
+                <activity
+                    android:name=".FeedActivity"
+                    android:exported="false" />
+                <activity
+                    android:name=".SearchActivity"
+                    android:exported="false" />
+                <activity
+                    android:name=".SearchResultsActivity"
+                    android:exported="false" />
+                <activity
+                    android:name=".MessagesActivity"
+                    android:exported="false" />
+            </application>
 
 </manifest>
